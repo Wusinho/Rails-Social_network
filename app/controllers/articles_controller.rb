@@ -19,9 +19,9 @@ class ArticlesController < ApplicationController
    
   end
 
-  def like
+  def vote
     @article = Article.all.find(params[:id])
-    Like.create(user_id: current_user.id, article_id: @article.id)
+    Vote.create(user_id: current_user.id, article_id: @article.id)
 
     redirect_to article_path(@article)
   end

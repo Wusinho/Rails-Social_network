@@ -1,0 +1,16 @@
+
+
+<div class="row">
+  <% @most_recent.each_with_index do |article, i| %>
+    <div class="col-3 p-0">
+    
+      <%= link_to article.category.name, category_path(article.category_id) %>
+      <%= article.title %>
+      <%= image_tag article.image_url %>
+    </div>   
+      
+  <% end %>
+</div>
+
+
+

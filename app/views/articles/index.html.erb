@@ -1,16 +1,13 @@
 
 
 <div class="row">
-  <% @group.each do |j| %>
-    <% @group.each do |i| %>
-      <% until j.category_id != i.category_id %>
-        
-        <%= j.category_id %>
+
+  <%  @group.each_with_index do |j, index| %>
+      <% if j.category_id == 2 %>
+      <%= index %>
         <%= j.title %>
-        <% break %>
       <% end %>
 
-    <% end %>
   <% end %>
 </div>
 

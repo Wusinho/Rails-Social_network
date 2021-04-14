@@ -1,12 +1,13 @@
 
 
 <div class="row">
-
   <%  @categories.each_with_index do |j, index| %>
-    <%= j.articles.ordered_by_most_recent.first.title %>
-    <%= image_tag j.articles.ordered_by_most_recent.first.image_url  %>
+    <div class='col-3 p-0'>
+      <%= j.articles.ordered_by_most_recent.first.title %>
+      <%= link_to j.name %>
+      <%= image_tag j.articles.ordered_by_most_recent.first.image_url  %>
 
-
+  </div>
   <% end %>
 </div>
 

@@ -1,19 +1,58 @@
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-<div class="row">
-  <% @recent_related_articles.each do |article| %>
+  <div class="row" >
 
-        <div class="col-3 p-0">
-          <%= link_to article.title, article_path(article.id) %>
-            <%= image_tag article.image_url  %>
-            
+<% @recent_related_articles.each_with_index do |j, index| %>
+    <% if index < 2 %>
+      <div class="col-md-6 p-0 ">
+        <div class="card m-0 border-0" style="max-width: 540px;">
+          <div class="row no-gutters">
+
+            <div class="col-md-6">
+              <%= image_tag j.image_url %>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title"><%= j.title %></h5>
+                <h5 class="card-title"><%= index %></h5>
+                <p class="card-text"><%= j.body %></p>
+              </div>
+            </div>
+
+          </div>
         </div>
+      </div>
+      
   <% end %>
-</div>
+<% end %>
+  </div>
 
+  <div class="row" >
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<% @recent_related_articles.each_with_index do |j, index| %>
+    <% if index >= 2 %>
+      <div class="col-md-6 p-0">
+        <div class="card m-0 border-0" style="max-width: 540px;">
+          <div class="row no-gutters">
+
+          
+
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title"><%= j.title %></h5>
+                <h5 class="card-title"><%= index %></h5>
+                <p class="card-text"><%= j.body %></p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <%= image_tag j.image_url %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+  <% end %>
+<% end %>
+  </div>

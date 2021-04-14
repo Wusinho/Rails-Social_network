@@ -1,11 +1,19 @@
 
+<%  @categories.each_with_index do |j, index| %>
+  
 
-<div class="row">
-  <%  @categories.each_with_index do |j, index| %>
-    <div class='col-3 p-0'>
+<% end %>
+
+
+
+<div class="row m-0" style="height: 200px; width: 100%">
+  <%  @categories.each do |j| %>
+
+    <div class='col-3 p-0 h-100 d-inline-block ' style="background: url(<%= j.articles.ordered_by_most_recent.first.image_url %>); background-size : cover " >
+
       <%= j.articles.ordered_by_most_recent.first.title %>
-      <%= link_to j.name %>
-      <%= image_tag j.articles.ordered_by_most_recent.first.image_url  %>
+      <%= link_to j.name, category_path(j.id) %>
+
 
   </div>
   <% end %>

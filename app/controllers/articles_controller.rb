@@ -3,9 +3,11 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
   # GET /articles or /articles.json
   def index
-    @articles = Article.includes(:category).all
-
-    @most_recent = Article.ordered_by_most_recent.limit(4)
+    @articles = Article.all
+    @most_recent = Article.order_category
+    @group = @most_recent.ordered_by_most_recent
+    #@most_recent = Article.limit(4).order(created_at: :desc)
+    #@most_recent = @order.distinct
     
     #@recent.each do |book|
      # @box = book.category_id.created_at
@@ -28,7 +30,6 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    @categories = Category.all
 
   end
 
@@ -85,7 +86,7 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :body, :image, :user_id, :category_id)
     end
 
-   
+  
 
 
 end

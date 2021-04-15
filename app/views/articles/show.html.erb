@@ -1,6 +1,9 @@
 
 
-<div class='p-0' style="background: url(<%= @article.image_url %>); background-size : cover; height: 80vh " >
+<div class=' p-0 d-flex justify-content-center align-items-center' style="background: url(<%= @article.image_url %>); background-size : cover; height: 80vh " >
+
+
+  <div class="pt-5 text-center text-dark p-3 " style="background-color: rgba(0, 0, 0, 0.2); width: 80%; height: 50%">
 
 <p>
   <strong>Title:</strong>
@@ -18,8 +21,9 @@
 
   <% if user_signed_in?  %>
     <% if @article.liked?(current_user) %>
-      <%=  @article.vote.count %>
+    <button class='btn btn-secondary disabled'><%=  @article.vote.count  %></button>
     <% else %>
+
       <%= link_to "Vote", vote_path(@article), method: :put, class:'btn btn-success' %>
     <% end %>
   <% end %>
@@ -31,5 +35,5 @@
 
 
 
-
+</div>
 </div>

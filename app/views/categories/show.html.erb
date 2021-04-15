@@ -7,13 +7,13 @@
         <div class="card m-0 border-0" style="max-width: 540px;">
           <div class="row no-gutters">
 
-            <div class="col-md-6">
+            <div class="col-md-6" style="height: 39vh">
               <%= image_tag j.image_url %>
             </div>
 
             <div class="col-md-6">
               <div class="card-body">
-                <h5 class="card-title"><%= j.title %></h5>
+               <%= link_to j.title, article_path(j.id) %>
                 <h5 class="card-title"><%= index %></h5>
                 <p class="card-text"><%= j.body %></p>
               </div>
@@ -37,9 +37,10 @@
 
           
 
-            <div class="col-md-6">
+            <div class="col-md-6"style="height: 39vh">
               <div class="card-body">
-                <h5 class="card-title"><%= j.title %></h5>
+               <%= link_to j.title, article_path(j.id) %>
+
                 <h5 class="card-title"><%= index %></h5>
                 <p class="card-text"><%= j.body %></p>
               </div>

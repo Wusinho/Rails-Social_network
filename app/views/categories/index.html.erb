@@ -1,7 +1,9 @@
 
-<%  @categories.each_with_index do |j, index| %>
-  
-
+<%  @articles.each do |j| %>
+    <% if j.vote.third.present? %>
+      <%= j.vote.third.article_id %>
+      
+    <% end %>
 <% end %>
 
 
@@ -18,6 +20,3 @@
   </div>
   <% end %>
 </div>
-
-
-

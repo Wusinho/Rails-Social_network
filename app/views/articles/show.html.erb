@@ -23,8 +23,9 @@
   <% end %>
 
 <% if current_user && current_user.username == @article.user.username %>
-  <%= link_to 'Edit', edit_article_path(@article), class:'btn btn-danger' %> 
 <% end %>
+  <%= link_to 'Edit', edit_article_path(@article), class:'btn btn-danger' %> 
+
 <%= link_to 'Back', category_path(@article.category_id), class:'btn btn-primary' %>
 
 </div>

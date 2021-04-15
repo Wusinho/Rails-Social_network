@@ -17,7 +17,7 @@ RSpec.describe Article, type: :model do
   describe 'Validations' do
     it { should validate_presence_of(:title)}
     it { should validate_presence_of(:image_data)}
-    it { should validate_length_of(:body).is_at_most(100)    }
+    it { should validate_length_of(:body).is_at_most(300)    }
 
 
   end

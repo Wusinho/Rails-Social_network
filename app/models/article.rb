@@ -20,7 +20,7 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
   validates :image_data, presence: true
-  validates :body, presence: true, length: { maximum: 100 }
+  validates :body, presence: true, length: { maximum: 300 }
 
 
   scope :ordered_by_most_recent, -> {order(created_at: :desc) }

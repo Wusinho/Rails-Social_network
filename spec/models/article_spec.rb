@@ -14,5 +14,21 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Validations' do
+    it { should validate_presence_of(:title)}
+    it { should validate_presence_of(:image_data)}
+    it { should validate_length_of(:body).is_at_most(100)    }
+
+
+  end
+
+  describe 'Article' do
+    it { should belong_to(:user) }
+
+    it { should belong_to(:category)}
+
+    it { should have_many(:votes) }
+  end
+
+
 end

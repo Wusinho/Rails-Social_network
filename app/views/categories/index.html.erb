@@ -1,21 +1,22 @@
 
-
 <% @most_voted.each do |j| %>
-
-  <%= j.title %>
-  <%= image_tag j.image_url %>
-
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <%= image_tag j.image_url, class:"d-block w-100" %>
+        <div class="carousel-caption d-none d-md-block">
+          <h5><%= j.title %></h5>
+        </div>
+    </div>
+  </div>
+</div>
 <% end %>
-
-
-
 
 
 <div class="row m-0" style="height: 200px; width: 100%">
   <%  @categories.each do |j| %>
 
     <div class='col-3 p-0 h-100 d-inline-block ' style="background: url(<%= j.articles.ordered_by_most_recent.first.image_url %>); background-size : cover " >
-
       <%= j.articles.ordered_by_most_recent.first.title %>
       <%= link_to j.name, category_path(j.id) %>
 

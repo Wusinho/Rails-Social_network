@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all
     @most_recent = Article.order_category
     @group = @most_recent.ordered_by_most_recent
-    @popular =  @articles.popular
+    
     #@most_recent = Article.limit(4).order(created_at: :desc)
     #@most_recent = @order.distinct
     

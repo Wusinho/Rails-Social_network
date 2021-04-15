@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.includes(:articles).all
     @articles = Article.all
+    @most_voted = Article.joins(:votes).group('articles.id').order('count(votes.id) desc').limit(1)
   end
 
   # GET /categories/1 or /categories/1.json

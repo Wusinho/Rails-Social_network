@@ -1,10 +1,13 @@
 
-<%  @articles.each do |j| %>
-    <% if j.vote.third.present? %>
-      <%= j.vote.third.article_id %>
-      
-    <% end %>
+
+<% @most_voted.each do |j| %>
+
+  <%= j.title %>
+  <%= image_tag j.image_url %>
+
 <% end %>
+
+
 
 
 

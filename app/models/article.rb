@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  has_many :vote
+  has_many :votes
 
   include ImageUploader::Attachment(:image)
 
@@ -16,7 +16,7 @@ class Article < ApplicationRecord
 
 
   def liked?(user)
-    self.vote.find{|vote| vote.user_id == user.id}
+    self.votes.find{|vote| vote.user_id == user.id}
   end
 
   

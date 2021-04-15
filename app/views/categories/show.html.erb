@@ -8,8 +8,8 @@
           <div class="row no-gutters">
 
             <div class="col-md-6" style="height: 39vh">
-              <%= image_tag j.image_url %>
-<%= image_tag 'devices/my-device.png' rescue image_tag 'devices/unknow-device.png' %>
+              
+<%= image_tag j.image_url rescue image_tag 'devices/unknow-device.png' %>
 
             </div>
 

@@ -6,6 +6,10 @@ On the home page, they can see the most voted article and at the bottom the most
 This site has been created mainly with Ruby on Rails as a framework, PostgreSQL database and bootstrap for CSS.
 ![screenshot](./app/assets/images/RoR-pro.png)
 
+## Video Link
+
+[video](https://www.loom.com/share/a2f8e72879d2411b9e10c4622ec6d01b)
+
 ## Built With
 
 - Ruby 2.7.2

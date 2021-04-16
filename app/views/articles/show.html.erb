@@ -3,7 +3,8 @@
 <div class=' p-0 d-flex justify-content-center align-items-center' style="background: url(<%= @article.image_url %>); background-size : cover; height: 80vh " >
 
 
-
+<% if @article %>
+  
 
 <div class="card text-center" style="width:50%">
   <div class="card-header">
@@ -28,6 +29,7 @@
 <% end %>
 
 <%= link_to 'Back', category_path(@article.category_id), class:'btn btn-primary' %>
+<% end %>
 
 </div>
 

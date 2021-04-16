@@ -1,24 +1,98 @@
-# README
+# Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is Logo, the website focused on the movie articles. There are 4 main categories for the articles . This web page allows the registration of a new users, edit information and authenticates them, users can create articles and assign them a category, they can also vote for the articles they like the most.
+At the home page they can see the most voted article and at the bottom the most recent articles.
 
-Things you may want to cover:
+This site has been created mainly with Ruby on Rails as a framework, PostgreSQL database and bootstrap for CSS.
+![screenshot](./app/assets/images/RoR-pro.png)
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby 2.7.2
+- Ruby on Rails 6.1.1
+- PostgreSQL
+- Rspec gem
+- Simple_form gem
+- Devise gem
+- Shrine gem
+- Bootstrap
 
-* Configuration
+### Setup
 
-* Database creation
+To run this project locally, please ensure you have Ruby and Ruby on Rails installed on your machine, then clone this repository by running.
 
-* Database initialization
+```bash
+git clone https://github.com/Wusinho/Rails-Capstone.git
+```
 
-* How to run the test suite
+Open your terminal and CD to the directory where you create the clone repository.
 
-* Services (job queues, cache servers, search engines, etc.)
+Now run:
 
-* Deployment instructions
+```bash
+bundle install
+```
 
-* ...
+The next two steps are important to avoid an error of action text.
+
+First run:
+
+```bash
+yarn install --check-files
+```
+
+Then you need to reinstall action text with:
+
+```bash
+rails action_text:install
+```
+
+If the install asks you to overwrite something, just enter:
+
+```bash
+n
+```
+
+To setup the database run:
+
+```bash
+rails db:create
+rails db:migrate
+```
+
+Is super important to populate the app, so now run:
+
+```bash
+rails db:seed
+```
+
+To set up the server put:
+
+```bash
+rails s
+```
+
+After this you can open your favorite web-browser and copy paste the next:
+
+```bash
+http://localhost:3000
+```
+
+### Author
+
+👤 **Heber Lazo**
+
+- Github: [@Wusinho](https://github.com/Wusinho)
+- LinkedIn: [Heber Lazo](https://www.linkedin.com/in/heber-lazo-benza-523266133/)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](LICENSE) licensed.

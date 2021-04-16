@@ -8,7 +8,7 @@
     <% return if @most_voted.nil? %>
 
         <% if @most_voted %>
-          <%= image_tag j.image_url  %>
+          <%= image_tag j.image_url if j.image  %>
           <div class="carousel-caption d-none d-md-block">
             <h5><%= j.title %></h5>
           </div>

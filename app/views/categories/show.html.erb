@@ -1,10 +1,9 @@
 
-<% if @recent_related_articles %>
   
   <div class="row" >
 
 <% @recent_related_articles.each_with_index do |j, index| %>
-  
+  <% return if @recent_related_articles.nil?  %>
     <% if index < 2 %>
       <div class="col-md-6 p-0 ">
         <div class="card m-0 border-0" style="max-width: 540px;">
@@ -31,6 +30,8 @@
   <div class="row" >
 
 <% @recent_related_articles.each_with_index do |j, index| %>
+  <% return if @recent_related_articles.nil?  %>
+
     <% if index >= 2 %>
       <div class="col-md-6 p-0">
         <div class="card m-0 border-0" style="max-width: 540px;">
@@ -58,4 +59,3 @@
 <% end %>
   </div>
 
-<% end %>

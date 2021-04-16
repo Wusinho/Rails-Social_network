@@ -4,11 +4,17 @@
 
   <div class="carousel-inner">
     <div class="carousel-item active">
+  <% if  @most_voted.each do |j| %>
+    <% return if @most_voted.nil? %>
+
         <% if @most_voted %>
-          <%= image_tag @most_voted.first.image_url  %>
+          <%= image_tag j.image_url  %>
           <div class="carousel-caption d-none d-md-block">
-            <h5><%= @most_voted.first.title %></h5>
+            <h5><%= j.title %></h5>
           </div>
+        <% else %>
+        <%= render 'default' %>
+        <% end %>
         <% end %>
     </div>
   </div>
@@ -16,9 +22,12 @@
 
 
 <div class="row m-0" style="height: 200px; width: 100%">
-  <% if @categories %>
 
   <%  @categories.each do |j| %>
+    <% return if @categories.nil? %>
+
+  <% if @categories %>
+
       <div class='col-3 py-3 d-flex flex-column justify-content-between text-white' style="background: url(<%= j.articles.ordered_by_most_recent.first.image_url %>); background-size : cover " >
         <%= link_to j.name, category_path(j.id), class:'text-warning' %>
         <%= j.articles.ordered_by_most_recent.first.title %>

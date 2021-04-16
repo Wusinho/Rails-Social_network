@@ -1,25 +1,21 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article, only: %i[show edit update destroy]
   # GET /articles or /articles.json
   def index
     @articles = Article.all
     @most_recent = Article.order_category
     @group = @most_recent.ordered_by_most_recent
-    
-    #@most_recent = Article.limit(4).order(created_at: :desc)
-    #@most_recent = @order.distinct
-    
-    #@recent.each do |book|
-     # @box = book.category_id.created_at
-    #end
 
+    # @most_recent = Article.limit(4).order(created_at: :desc)
+    # @most_recent = @order.distinct
 
+    # @recent.each do |book|
+    # @box = book.category_id.created_at
+    # end
   end
 
   # GET /articles/1 or /articles/1.json
-  def show
-   
-  end
+  def show; end
 
   def vote
     @article = Article.all.find(params[:id])
@@ -27,15 +23,14 @@ class ArticlesController < ApplicationController
 
     redirect_to article_path(@article)
   end
+
   # GET /articles/new
   def new
     @article = Article.new
-
   end
 
   # GET /articles/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /articles or /articles.json
   def create
@@ -44,7 +39,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: "Article was successfully created." }
+        format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -57,7 +52,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: "Article was successfully updated." }
+        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -70,23 +65,20 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
+      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def article_params
-      params.require(:article).permit(:title, :body, :image, :user_id, :category_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
-  
-
-
+  # Only allow a list of trusted parameters through.
+  def article_params
+    params.require(:article).permit(:title, :body, :image, :user_id, :category_id)
+  end
 end

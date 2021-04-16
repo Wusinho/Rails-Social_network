@@ -22,18 +22,14 @@ class Article < ApplicationRecord
   validates :image_data, presence: true
   validates :body, presence: true, length: { maximum: 300 }
 
-
-  scope :ordered_by_most_recent, -> {order(created_at: :desc) }
+  scope :ordered_by_most_recent, -> { order(created_at: :desc) }
   scope :order_category, -> { order(:category_id) }
 
-  def title=(s)
-    write_attribute(:title, s.to_s.titleize) 
+  def title=(first)
+    write_attribute(:title, first.to_s.titleize)
   end
 
   def liked?(user)
-    self.votes.find{|vote| vote.user_id == user.id}
+    votes.find { |vote| vote.user_id == user.id }
   end
-
-  
-
 end

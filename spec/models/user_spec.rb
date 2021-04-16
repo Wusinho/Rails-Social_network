@@ -45,6 +45,4 @@ RSpec.describe User, type: :model do
 
     it { should allow_value(user.password).for(:password) }
   end
-
-  
 end

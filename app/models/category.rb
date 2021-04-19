@@ -15,5 +15,4 @@ class Category < ApplicationRecord
   def name=(name)
     write_attribute(:name, name.to_s.titleize)
   end
-
 end

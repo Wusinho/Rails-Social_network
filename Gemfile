@@ -30,7 +30,7 @@ gem 'hirb', '~> 0.7.3'
 gem 'rubocop', '~>0.81.0'
 gem 'simple_form', '~> 5.1'
 
-gem "marcel"
+gem 'marcel'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'image_processing', '~> 1.2'

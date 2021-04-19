@@ -28,7 +28,7 @@
     <% return if @categories.nil? %>
 
 
-      <div class='col-3 py-3 d-flex flex-column justify-content-between text-white' style="background: url(<%= j.articles.ordered_by_most_recent.first.image_url if j.articles.ordered_by_most_recent.first %>); background-size : cover " >
+      <div class='col-3 py-3 d-flex flex-column justify-content-between text-white' style="background: url(<%= j.articles.ordered_by_most_recent.first.image_url if j.articles.ordered_by_most_recent.first.image_url %>); background-size : cover " >
         <%= link_to j.name, category_path(j.id), class:'text-warning' %>
         <%= j.articles.ordered_by_most_recent.first.title %>
       </div>

@@ -21,7 +21,7 @@ class User < ApplicationRecord
   has_many :votes
   validates :username, presence: true, length: { maximum: 20 }
 
-  def title=(first)
-    write_attribute(:username, first.to_s.titleize)
+  def username=(username)
+    write_attribute(:username, username.to_s.titleize)
   end
 end

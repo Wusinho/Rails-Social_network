@@ -25,8 +25,8 @@ class Article < ApplicationRecord
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
   scope :order_category, -> { order(:category_id) }
 
-  def title=(first)
-    write_attribute(:title, first.to_s.titleize)
+  def title=(name)
+    write_attribute(:title, name.to_s.titleize)
   end
 
   def liked?(user)

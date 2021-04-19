@@ -1,9 +1,9 @@
 require "cloudinary"
 require "shrine/storage/cloudinary"
 Cloudinary.config(
-cloud_name: ENV['CLOUD_NAME'],
-api_key:    ENV['CLOUD_API_KEY'],
-api_secret: ENV['CLOUD_API_SECRET'],
+cloud_name: 'wusinho1',
+api_key:    '729324258626264',
+api_secret: 'It7W6oH5Jan10qmCJTA3Sx8Y2qI'
 )
 Shrine.storages = {
 cache: Shrine::Storage::Cloudinary.new(prefix: "upload_app/cache"), # for direct uploads

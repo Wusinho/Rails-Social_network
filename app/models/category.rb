@@ -9,7 +9,11 @@
 #
 class Category < ApplicationRecord
   has_many :articles
-  has_many :article_votes, through: :articles, source: :vote
 
   validates :name, presence: true, length: { maximum: 20 }
+
+  def name=(name)
+    write_attribute(:name, name.to_s.titleize)
+  end
+
 end

@@ -1,0 +1,22 @@
+      <div class="col-md-6 p-0">
+        <div class="card m-0 border-0" style="max-width: 540px;">
+          <div class="row no-gutters">
+
+          
+
+            <div class="col-md-6"style="height: 39vh">
+              <div class="card-body">
+               <%= link_to j.title, article_path(j.id) %>
+
+                <p class="card-text"><%= j.body %></p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <%= image_tag j.image_url %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      

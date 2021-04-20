@@ -9,13 +9,27 @@ module CategoriesHelper
     end
   end
 
-  def loop(categories)
-    return if categories.nil?
+  def categories_showt(categories)
+    list = ''
+    categories.each_with_index do |category, index|
+      return if category.nil?
 
-    categories.each do |j|
-      next unless j.articles.ordered_by_most_recent.first
+      if index < 2
+      list += "<div class='col-md-6 p-0' >"
+      list += "<div class='row no-gutters' >"
+      list += "<div class='col-md-6' style='height: 39vh' >"
+      list += "image_tag j.image_url"
 
-      link_to(j.name, category_path(j.id), class: ['text-warning'])
+      list += "<h2>#{link_to category.name, category_path(category), class: 'cl-lg'}</h2>"
+      list += "<h2 class='cl-lg'>article name:     #{category.articles.ordered_by_most_recent.first.title}</h2>"
+      list += "</div> </div> "
+                              end
     end
+    list.html_safe
   end
+
+
+
+
+
 end

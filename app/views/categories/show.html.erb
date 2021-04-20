@@ -6,22 +6,18 @@
   <% return if @recent_related_articles.nil?  %>
     <% if index < 2 %>
       <div class="col-md-6 p-0 ">
-        <div class="card m-0 border-0" style="max-width: 540px;">
           <div class="row no-gutters">
             <div class="col-md-6" style="height: 39vh">
               <%= image_tag j.image_url  %>
             </div>
 
-            <div class="col-md-6">
-              <div class="card-body">
-               <%= link_to j.title, article_path(j.id) %>
+            <div class="col-md-6 p-4">
+                <%= link_to j.title, article_path(j.id) %>
                 <p class="card-text"><%= j.body %></p>
-              </div>
             </div>
 
           </div>
         </div>
-      </div>
       
   <% end %>
 <% end %>
@@ -34,17 +30,10 @@
 
     <% if index >= 2 %>
       <div class="col-md-6 p-0">
-        <div class="card m-0 border-0" style="max-width: 540px;">
           <div class="row no-gutters">
-
-          
-
-            <div class="col-md-6"style="height: 39vh">
-              <div class="card-body">
-               <%= link_to j.title, article_path(j.id) %>
-
+            <div class="col-md-6 p-4" style="height: 39vh">
+                <%= link_to j.title, article_path(j.id) %>
                 <p class="card-text"><%= j.body %></p>
-              </div>
             </div>
 
             <div class="col-md-6">
@@ -52,7 +41,6 @@
             </div>
 
           </div>
-        </div>
       </div>
       
   <% end %>

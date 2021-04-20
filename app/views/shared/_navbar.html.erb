@@ -12,18 +12,11 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-      <% if user_signed_in? %>
-          Write Something
-      <% else %>
-          Getting Started
-      <% end %>
+      <%= navbarUser %>
       </button>
     <% if user_signed_in? %>
       <div class="dropdown-menu">
-        <% if user_signed_in? && current_user.username == 'Super' %>
-          <a class="dropdown-item" href="<%= new_category_path %>" >New Category</a>
-          <a class="dropdown-item" href="<%= articles_path %>" >All Articles</a>
-        <% end %>
+          <%= superOptions %>
 
           <a class="dropdown-item" href="<%= new_article_path %>" >New Article</a>
           <a class="dropdown-item" href="<%= edit_user_registration_path %>" > <%= current_user.username %> </a>

@@ -2,48 +2,12 @@
   
   <div class="row" >
 
-<% @recent_related_articles.each_with_index do |j, index| %>
-  <% return if @recent_related_articles.nil?  %>
-    <% if index < 2 %>
-      <div class="col-md-6 p-0 ">
-          <div class="row no-gutters">
-            <div class="col-md-6" style="height: 39vh">
-              <%= image_tag j.image_url  %>
-            </div>
-
-            <div class="col-md-6 p-4">
-                <%= link_to j.title, article_path(j.id) %>
-                <p class="card-text"><%= j.body %></p>
-            </div>
-
-          </div>
-        </div>
-      
-  <% end %>
-<% end %>
+<%= categories_showt(@recent_related_articles) %>
   </div>
 
   <div class="row" >
 
-<% @recent_related_articles.each_with_index do |j, index| %>
-  <% return if @recent_related_articles.nil?  %>
-
-    <% if index >= 2 %>
-      <div class="col-md-6 p-0">
-          <div class="row no-gutters">
-            <div class="col-md-6 p-4" style="height: 39vh">
-                <%= link_to j.title, article_path(j.id) %>
-                <p class="card-text"><%= j.body %></p>
-            </div>
-
-            <div class="col-md-6">
-              <%= image_tag j.image_url %>
-            </div>
-
-          </div>
-      </div>
-      
-  <% end %>
-<% end %>
+<%= categories_showb(@recent_related_articles) %>
+  
   </div>
 

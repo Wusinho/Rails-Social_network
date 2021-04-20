@@ -56,15 +56,50 @@ end
 
     end
 
-    def dropdownn
-        if user_signed_in?
+    def categories_showt(categories)
+        list = ''
+        categories.each_with_index do |category, index|
+            return if category.nil?
 
-            render 'dropdowna'
-        else
-            render 'dropdownb'
+            if index < 2
+            list += "<div class='col-md-6 p-0' >"
+            list += "<div class='row no-gutters' >"
+            list += "<div class='col-md-6' style='height: 39vh' >"
+            list += image_tag category.image_url
+            list += "</div>"
+            list += "<div class='col-md-6 p-4' >"
+            list += link_to category.title, article_path(category.id) 
+            list += "<p class='card-text'>" 
+            list += category.body 
+            list += "</p> "
+            list += "</div>"
+            list += "</div> </div> "
         end
+        end
+        list.html_safe
+    end
 
+    def categories_showb(categories)
+        list = ''
+        categories.each_with_index do |category, index|
+            return if category.nil?
 
+            if index >= 2
+            list += "<div class='col-md-6 p-0' >"
+            list += "<div class='row no-gutters' >"
+            list += "<div class='col-md-6 p-4' >"
+            list += link_to category.title, article_path(category.id) 
+            list += "<p class='card-text'>" 
+            list += category.body 
+            list += "</p> "
+            list += "</div>"
+            list += "<div class='col-md-6' style='height: 39vh' >"
+            list += image_tag category.image_url
+            list += "</div>"
+            list += "</div> </div> "
+        end
+        end
+        list.html_safe
     end
 
 

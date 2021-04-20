@@ -3,7 +3,6 @@
 <div class=' p-0 d-flex justify-content-center align-items-center' style="background: url(<%= @article.image_url %>); background-size : cover; height: 80vh " >
 
 
-<% if @article %>
   
 
 <div class="card text-center" style="width:50%">
@@ -15,21 +14,10 @@
     <h5 class="card-title"><%= @article.title %></h5>
     <p class="card-text"><%= @article.body %></p>
   </div>
-  <% if user_signed_in?  %>
-    <% if @article.liked?(current_user) %>
-      <button type="button" class="btn btn-success ">Like <span class="badge badge-light"><%=  @article.votes.count  %></span></button>
-    <% else %>
-      <%= link_to "Vote", vote_path(@article), method: :put, class:'btn btn-success' %>
-    <% end %>
-  <% end %>
-
-<% if current_user && current_user.username == @article.user.username %>
-  <%= link_to 'Edit', edit_article_path(@article), class:'btn btn-danger' %> 
-
-<% end %>
+<%= btnacticles %>
+<%= edit %>
 
 <%= link_to 'Back', category_path(@article.category_id), class:'btn btn-primary' %>
-<% end %>
 
 </div>
 

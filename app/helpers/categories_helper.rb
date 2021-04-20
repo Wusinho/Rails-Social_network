@@ -1,10 +1,9 @@
 module CategoriesHelper
   def carousel(article)
-    if article.nil?
-      render 'default'
-
-    else
+    if article
       render 'carousel'
+    else
+      render 'default'
 
     end
   end

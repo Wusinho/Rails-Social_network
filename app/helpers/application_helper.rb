@@ -8,57 +8,6 @@ def navbarUser
     end
 end
 
-# def dropmenu
-
-#     if user_signed_in? 
-#     list = ''
-
-#         list += "<div class='dropdown-menu'>"
-#         list += superOptions
-#         list += "<a class='dropdown-item' href="
-#         list += new_article_path 
-#         list += " >"
-#         list += "New Article"
-#         list +=  "</a>"
-#         list +=  " <a class='dropdown-item' href= "
-#         list += edit_user_registration_path
-#         list += ">" 
-#         list += current_user.username
-#         list += "</a>"
-#         list += "<div class='dropdown-divider'></div>"
-#         list += "<a class='dropdown-item' >" <%= link_to 'Log Out', destroy_user_session_path, method: :delete , class:"dropdown-item"%></a>
-#         list +=  </div>
-#     else
-#         list +=<div class="dropdown-menu">
-#         list +=    <form class="px-4 py-3" accept-charset="UTF-8" action="<%= new_user_session_path %>" method="post">
-#         list +=    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
-#         list +=      <div class="form-group">
-#         list +=        <label  for="email">Email address</label>
-#         list +=        <input type="email" class="form-control" placeholder="email@example.com" id="email" name="user[email]" type="text" required>
-#         list +=      </div>
-#         list +=      <div class="form-group">
-#         list +=        <label for="password">Password</label>
-#         list +=        <input type="password" class="form-control" id="password" placeholder="Password" name="user[password]" type="password">
-#         list +=      </div>
-#         list +=      <div class="form-group">
-#         list +=        <div class="form-check">
-#         list +=          <input type="checkbox" class="form-check-input" id="dropdownCheck">
-#         list +=          <label class="form-check-label" for="dropdownCheck">
-#         list +=            Remember me
-#         list +=          </label>
-#         list +=        </div>
-#         list +=      </div>
-#         list +=      <button type="submit" class="btn btn-primary">Sign in</button>
-#         list +=    </form>
-#         list +=    <div class="dropdown-divider"></div>
-#         list +=    <a class="dropdown-item" href="<%= new_user_registration_path %>" >New around here? Sign up</a>
-#         list +=</div>
-#     end
-
-#     list.html_safe
-    
-# end
-
 
     def superOptions
 
@@ -134,5 +83,21 @@ end
     list.html_safe
 
     end
+
+
+def dropmenu
+    if user_signed_in? 
+
+        render 'shared/signed_in'
+
+    else
+        render 'shared/not_signed_in'
+
+    end
+
+
+    
+end
+
 
 end

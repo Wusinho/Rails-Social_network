@@ -14,13 +14,13 @@
 
 <div class="row m-0" style="height: 200px; width: 100%">
   
-  [<% @categories.each do |article| %>
+  <% @categories.each do |article| %>
     <% if article.articles.ordered_by_most_recent.first %>
       <div class='col-3 py-3 d-flex flex-column justify-content-between text-white' style="background: url(<%= article.articles.ordered_by_most_recent.first.image_url  %>); background-size : cover " >
             <%= link_to article.name, category_path(article.id), class:'text-warning' %>
             <%= article.articles.ordered_by_most_recent.first.title %>
       </div>
     <% end %>
-  <% end %>]
+  <% end %>
 
 </div>

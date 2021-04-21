@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :articles, :articles, only: %i[new create destroy show index] do 
+  resources :articles, :articles, only: %i[new create destroy show index] 
   resources :categories, only: %i[show new create index]
   devise_for :users, :controllers => { registrations: 'registrations' }
   root 'categories#index'

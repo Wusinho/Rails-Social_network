@@ -3,5 +3,5 @@
     <%= superoptions %>
     <a class="dropdown-item" href="<%= new_article_path %>" >New Article</a>
     <a class="dropdown-item" href="<%= edit_user_registration_path %>" > <%= current_user.username %> </a>
-    <div class="dropdown-divider"></div><a class="dropdown-item" > <%= link_to 'Log Out', destroy_user_session_path, method: :delete , class:"dropdown-item"%></a>
+    <div class="dropdown-divider"></div> <%= link_to 'Log Out', destroy_user_session_path, method: :delete , class:"dropdown-item"%>
 </div>

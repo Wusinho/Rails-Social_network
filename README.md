@@ -4,7 +4,7 @@ This is Logo, the website focused on movie articles. There are 4 main categories
 On the home page, they can see the most voted article, and at the bottom the most recent articles.
 
 This site has been created mainly with Ruby on Rails as a framework, PostgreSQL database and bootstrap for CSS.
-![screenshot](./app/assets/images/RoR-pro.png)
+![screenshot](./app/assets/images/RoR_screen.png)
 
 ## Live Demo
 
@@ -79,6 +79,8 @@ To set up the server put:
 ```bash
 rails s
 ```
+
+- 'Super' user is the admin, it can add new categories and also delete posts.
 
 After this you can open your favorite web-browser and copy paste the next:
 

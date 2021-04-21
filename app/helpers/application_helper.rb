@@ -120,18 +120,18 @@ end
 
         categories.each do |category|
 
-        if category.articles.ordered_by_most_recent.first
-            list += "<div class='col-3 py-3 d-flex flex-column justify-content-between text-white' style='background: url( \"#{category.articles.ordered_by_most_recent.first.image_url}\"; background-size : cover  >"
-            list += "<h3>#{link_to category.name, category_path(category.id), class: 'text-warning'}</h3>"
-            list += "<h3>#{category.articles.ordered_by_most_recent.first.title }</h3>"
-            list += "</div>"
+            if category.articles.ordered_by_most_recent.first
+                list += "<div class='col-3 py-3 d-flex flex-column justify-content-between text-white' style='background: url( #{category.articles.ordered_by_most_recent.first.image_url}); background-size : cover '>"
+                list += "#{link_to category.name, category_path(category.id), class: 'text-warning'}"
+                list += "<h3>#{category.articles.ordered_by_most_recent.first.title }</h3>"
+                list += "</div>"
 
-            
-            list.html_safe
 
-        end
+
+            end
         
-    end
+        end
+    list.html_safe
 
     end
 

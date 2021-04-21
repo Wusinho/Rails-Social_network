@@ -14,7 +14,7 @@
 class Article < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  has_many :votes, :dependent => :delete_all
+  has_many :votes, dependent: :delete_all
 
   include ImageUploader::Attachment(:image)
 

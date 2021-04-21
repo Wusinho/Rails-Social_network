@@ -19,17 +19,14 @@ benza = User.create(username: "Benza", email: "benza@gmail.com", password: "1234
 action.articles.create(
     user_id:2, 
     title: "Transformers", 
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi ligula. Praesent eleifend orci at nulla ullamcorper, vel placerat enim sollicitudin. Suspendisse ut lorem faucibus, elementum magna id, pharetra.",
-    image_url: 'rescue.jpg'
-  
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi ligula. Praesent eleifend orci at nulla ullamcorper, vel placerat enim sollicitudin. Suspendisse ut lorem faucibus, elementum magna id, pharetra.",
   )
 
 
 romance.articles.create(
     user_id:3, 
     title: "Transformers", 
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi ligula. Praesent eleifend orci at nulla ullamcorper, vel placerat enim sollicitudin. Suspendisse ut lorem faucibus, elementum magna id, pharetra.",
-    image_url: 'rescue.jpg'
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi ligula. Praesent eleifend orci at nulla ullamcorper, vel placerat enim sollicitudin. Suspendisse ut lorem faucibus, elementum magna id, pharetra.",
   
   )
 
@@ -37,8 +34,7 @@ romance.articles.create(
 comedy.articles.create(
     user_id:4, 
     title: "Transformers", 
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi ligula. Praesent eleifend orci at nulla ullamcorper, vel placerat enim sollicitudin. Suspendisse ut lorem faucibus, elementum magna id, pharetra.",
-    image_url: 'rescue.jpg'
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi ligula. Praesent eleifend orci at nulla ullamcorper, vel placerat enim sollicitudin. Suspendisse ut lorem faucibus, elementum magna id, pharetra.",
   
   )
 
@@ -46,8 +42,7 @@ comedy.articles.create(
   horror.articles.create(
     user_id:5, 
     title: "Transformers", 
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi ligula. Praesent eleifend orci at nulla ullamcorper, vel placerat enim sollicitudin. Suspendisse ut lorem faucibus, elementum magna id, pharetra.",
-    image_url: 'rescue.jpg'
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a mi ligula. Praesent eleifend orci at nulla ullamcorper, vel placerat enim sollicitudin. Suspendisse ut lorem faucibus, elementum magna id, pharetra.",
   
   )
 
@@ -55,5 +50,4 @@ comedy.articles.create(
   vote1 = Vote.create!(
     user_id: 2,
     article_id: 1,
-    category_id: 1
   )

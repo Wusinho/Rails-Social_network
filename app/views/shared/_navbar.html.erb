@@ -6,16 +6,17 @@
 
       <div class="dropdown">
         <button
-          class="btn btn-secondary dropdown-toggle"
+          class="btn dropdown-toggle"
           type="button"
           id="dropdownMenuButton1"
           data-bs-toggle="dropdown"
           aria-expanded="false"
+          style="background-color: #fd6000;"
         >
       <%= navbarUser %>
       </button>
     <% if user_signed_in? %>
-      <div class="dropdown-menu">
+      <div class="dropdown-menu" style="background-color: #4e443e;">
           <%= superOptions %>
 
           <a class="dropdown-item" href="<%= new_article_path %>" >New Article</a>
@@ -23,7 +24,7 @@
           <div class="dropdown-divider"></div><a class="dropdown-item" > <%= link_to 'Log Out', destroy_user_session_path, method: :delete , class:"dropdown-item"%></a>
         </div>
     <% else %>
-      <div class="dropdown-menu">
+      <div class="dropdown-menu" style="background-color: #4e443e;">
           <form class="px-4 py-3" accept-charset="UTF-8" action="<%= new_user_session_path %>" method="post">
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
             <div class="form-group">
@@ -42,7 +43,7 @@
                 </label>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-secondary">Sign in</button>
           </form>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="<%= new_user_registration_path %>" >New around here? Sign up</a>

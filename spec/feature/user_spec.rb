@@ -1,13 +1,13 @@
-RSpec.describe 'create new user', type: :feature do
-  before :each do
-    @user = User.create(username: 'Yandel', email: 'Yandel@mail.com', password: '123456')
+require 'rails_helper'
+
+RSpec.describe User, type: :model do
+  it 'has associations' do
+    should have_many(:articles)
+    should have_many(:votes)
   end
-  scenario 'Create new user with valid inputs' do
-    visit new_user_registration_path
-    fill_in 'username', with: 'Yandel'
-    fill_in 'Email', with: 'Yandel@email.com'
-    fill_in 'Password', with: '123456', match: :prefer_exact
-    fill_in 'Password confirmation', with: '123456', match: :prefer_exact
-    click_on 'Sign up'
+
+  it 'validates' do
+    should validate_presence_of(:username)
+    should validate_uniqueness_of(:username)
   end
 end

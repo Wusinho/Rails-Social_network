@@ -19,7 +19,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :articles
   has_many :votes
-  validates :username, presence: true, length: { maximum: 20 }
+
+  validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 2, maximum: 20 }
 
   def username=(username)
     write_attribute(:username, username.to_s.titleize)

@@ -50,3 +50,7 @@ Article.create(
 
 
 
+  Vote.create!(
+    user_id: 2,
+    article_id: 3,
+  )

@@ -3,18 +3,9 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     @articles = Article.all
-    @most_recent = Article.order_category
-    @group = @most_recent.ordered_by_most_recent
 
-    # @most_recent = Article.limit(4).order(created_at: :desc)
-    # @most_recent = @order.distinct
-
-    # @recent.each do |book|
-    # @box = book.category_id.created_at
-    # end
   end
 
-  # GET /articles/1 or /articles/1.json
   def show; end
 
   def vote
@@ -24,15 +15,12 @@ class ArticlesController < ApplicationController
     redirect_to article_path(@article)
   end
 
-  # GET /articles/new
   def new
     @article = Article.new
   end
 
-  # GET /articles/1/edit
   def edit; end
 
-  # POST /articles or /articles.json
   def create
     @article = current_user.articles.build(article_params)
 
@@ -47,7 +35,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /articles/1 or /articles/1.json
   def update
     respond_to do |format|
       if @article.update(article_params)
@@ -60,7 +47,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1 or /articles/1.json
   def destroy
     @article.destroy
     respond_to do |format|
@@ -71,12 +57,10 @@ class ArticlesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_article
     @article = Article.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def article_params
     params.require(:article).permit(:title, :body, :image, :user_id, :category_id)
   end

@@ -9,8 +9,16 @@ module CategoriesHelper
   end
 
 
+def recent(art)
+  art.each do |category|
 
+    if category.articles.ordered_by_most_recent.first
 
+    render 'recentarticles', category: :category
+  
+    end
+  end
+end
 
 
 

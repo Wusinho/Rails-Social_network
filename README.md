@@ -1,4 +1,4 @@
-# Private Events
+# RoR Capstone Project
 
 This is Logo, the website focused on movie articles. There are 4 main categories for the articles. This web page allows the registration of new users, edit information, and authenticates them, users can create articles and assign them a category, they can also vote for the articles they like the most.
 On the home page, they can see the most voted article and at the bottom the most recent articles.

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :articles
-  resources :categories
-  devise_for :users
+  resources :articles, :articles, only: %i[new create destroy show index] do 
+  resources :categories, only: %i[show new create index]
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root 'categories#index'
   put '/article/:id/vote', to: 'articles#vote', as: 'vote'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

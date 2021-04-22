@@ -2,14 +2,14 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
   # GET /categories or /categories.json
   def index
-    @categories = Category.includes(:articles).all
+    @categories = Category.all
     @articles = Article.all
     @most_voted = Article.joins(:votes).group('articles.id').order('count(votes.id) desc').limit(1)
   end
 
   # GET /categories/1 or /categories/1.json
   def show
-    @category = Category.includes(:articles).find(params[:id])
+    @category = Category.find(params[:id])
     @article = Article.all
     recent_related_articles
   end

@@ -10,7 +10,7 @@
 class Category < ApplicationRecord
   has_many :articles
 
-  validates :name, presence: true, length: { maximum: 20 }
+  validates :name, presence: true, length: { maximum: 20 }, uniqueness: true
 
   def name=(name)
     write_attribute(:name, name.to_s.titleize)

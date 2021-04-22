@@ -8,7 +8,7 @@ This site has been created mainly with Ruby on Rails as a framework, PostgreSQL 
 
 ## Live Demo
 
-[livedemo](https://fast-fjord-31149.herokuapp.com/)
+[livedemo](https://immense-lowlands-48489.herokuapp.com/)
 
 ## Video Link
 

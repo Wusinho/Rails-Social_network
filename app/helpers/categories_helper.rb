@@ -9,14 +9,13 @@ module CategoriesHelper
   end
 
 
-  def nav_category
-    list = ''
-
-    Category.all.each do |category|
-      return if category.nil?
-
-      list += (link_to category.name, category_path(category.id))
-    end
-    list.html_safe
+  def nav_category(category)
+      if category.nil?
+      
+      render 'shared/category_menu'
+      
+      end
   end
+
+
 end

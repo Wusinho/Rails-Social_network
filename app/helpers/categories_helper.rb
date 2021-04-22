@@ -9,6 +9,11 @@ module CategoriesHelper
   end
 
   def nav_category(category)
-    render 'shared/category_menu' if category.nil?
+    render 'shared/category_menu' 
   end
+
+
+
+
+
 end

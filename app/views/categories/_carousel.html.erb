@@ -1,8 +1,3 @@
-<% @most_voted.each do |j| %>
 
-    <%= image_tag j.image_url if j.image  %>
-    <div class="carousel-caption d-none d-md-block">
-        <h5><%= j.title %></h5>
-    </div>
 
-<% end %>
+<%= recent_art(@most_voted) %>

@@ -77,16 +77,15 @@ module ApplicationHelper
   def article_feed(articles)
     list = ''
     articles.each do |article|
-      
-      list += "<tr>"
-      list += "<td>#{ article.title }</td>"
-      list += "<td>#{ article.body }</td>"
-      list += "<td>#{ article.user.username  }</td>"
-      list += "<td>#{ article.category.name }</td>"
-      list += "<td>"
-      list +=  (link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } )
-      list += "</td>"
-      list += "</tr>"
+      list += '<tr>'
+      list += "<td>#{article.title}</td>"
+      list += "<td>#{article.body}</td>"
+      list += "<td>#{article.user.username}</td>"
+      list += "<td>#{article.category.name}</td>"
+      list += '<td>'
+      list += (link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' })
+      list += '</td>'
+      list += '</tr>'
     end
     list.html_safe
   end
@@ -95,22 +94,13 @@ module ApplicationHelper
     list = ''
 
     articles.each do |article|
-    list += image_tag article.image_url
-    list +=  "<div class='carousel-caption d-none d-md-block'>"
-    list += "<h5>#{ article.title }</h5>"
-    list += "</div>"
-  
+      list += image_tag article.image_url
+      list += "<div class='carousel-caption d-none d-md-block'>"
+      list += "<h5>#{article.title}</h5>"
+      list += '</div>'
     end
     list.html_safe
-
   end
-
-  
-
-
-
-
-
 
   def dropmenu
     if user_signed_in?

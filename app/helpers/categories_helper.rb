@@ -8,12 +8,7 @@ module CategoriesHelper
     end
   end
 
-  def nav_category(category)
-    render 'shared/category_menu' 
+  def nav_category(_category)
+    render 'shared/category_menu'
   end
-
-
-
-
-
 end

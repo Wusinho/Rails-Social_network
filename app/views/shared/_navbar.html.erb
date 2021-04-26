@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light pb-0" style="background-color: rgba(0, 0, 0, 0.2);" >
+  <%= link_to 'MovieArt', root_path, class:"navbar-brand" %>
+
+<%= nav_category(@category) %>
+
+  <div class="collapse navbar-collapse mr-5" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto mr-4">
+
+      <div class="dropdown">
+        <button
+          class="btn dropdown-toggle btn-sm"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          style="background-color: #fd6000;"
+        >
+      <%= navbaruser %>
+      </button>
+
+    <%= dropmenu %>
+
+
+    </div>
+  </div>
+
+
+</nav>

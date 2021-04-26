@@ -1,0 +1,14 @@
+
+
+<ul class="nav nav-tabs">
+
+<% Category.all.each do |category, i| %>
+
+    <li class="nav-item ">
+        <a class="nav-link text-white" href= <%= category_path(category.id) %>>
+        <%= category.name %>
+        </a>
+    </li>
+
+<% end %>
+</ul>

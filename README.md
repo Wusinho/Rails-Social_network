@@ -1,4 +1,4 @@
-# RoR Capstone Project
+# Social Project
 
 This is Logo, the website focused on movie articles. There are 4 main categories for the articles. This web page allows the registration of new users, edit information, and authenticates them, users can create articles and assign them a category, they can also vote for the articles they like the most.
 On the home page, they can see the most voted article, and at the bottom the most recent articles.
@@ -98,11 +98,6 @@ http://localhost:3000
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Microverse
-- [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)</li>
 
 ## 📝 License
 
